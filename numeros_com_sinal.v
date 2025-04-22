@@ -7,6 +7,19 @@ module numeros_com_sinal(
     output reg [7:0] saida
 );
 
-//insira seu codigo aqui
+always @(*) begin
+    if(codigo == 0) begin
+        saida = entrada_signed_1 + entrada_signed_2;
+    end
+    else if(codigo == 1) begin
+        saida = entrada_unsigned_1 + entrada_unsigned_2;
+    end
+    else if(codigo == 2) begin
+        saida = entrada_unsigned_1 + entrada_signed_1;
+    end
+    else if(codigo == 3) begin
+        saida = entrada_unsigned_1 + entrada_signed_2;
+    end
+end
 
 endmodule
